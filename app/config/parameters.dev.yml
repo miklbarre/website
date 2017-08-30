@@ -1,0 +1,15 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: film
+    database_name1: musique
+    database_name2: serie
+    database_user: root
+    database_password: atlantis
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 218abd15fecefb487d77e877eaed67ed1412476f

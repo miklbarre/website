@@ -1,0 +1,13 @@
+#main #content-container #header {
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, .05);
+    display: flex;
+    background-color: darkgrey;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px 0 30px;
+}

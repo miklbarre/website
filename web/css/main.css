@@ -1,0 +1,43 @@
+body {
+    font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+    line-height: 1.4;
+    font-size: 13px;
+    letter-spacing: -0.1px;
+    overflow: hidden !important;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: rgba(0, 0, 0, .87);
+    background: white;
+    position: relative;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: auto !important;
+}
+
+#main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #FFF;
+    flex-direction: row;
+    position: relative;
+}
+
+#main #content-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #FFF;
+}
+
+#content {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    position: relative;
+}
