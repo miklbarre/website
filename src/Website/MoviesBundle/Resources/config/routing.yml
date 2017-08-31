@@ -1,0 +1,3 @@
+website_movies_homepage:
+    path:     /movies
+    defaults: { _controller: WebsiteMoviesBundle:Movie:index }
