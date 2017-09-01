@@ -40,4 +40,5 @@ html, body {
     overflow-x: hidden;
     flex: 1;
     position: relative;
+    padding-left: 30px;
 }

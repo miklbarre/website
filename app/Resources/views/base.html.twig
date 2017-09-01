@@ -10,7 +10,6 @@
     </head>
     <body>
         <div id="main">
-            {% include 'navigation.html.twig' %}
             <div id="content-container">
                 {% include 'header.html.twig' %}
                 <div id="content">
@@ -19,6 +18,7 @@
             </div>
         </div>
     </body>
-
-    {% include '::js.html.twig' %}
+    {% block javascript %}
+        {% include '::js.html.twig' %}
+    {% endblock %}
 </html>
