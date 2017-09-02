@@ -1,0 +1,3 @@
+website_serie_homepage:
+    path:     /
+    defaults: { _controller: WebsiteSerieBundle:Default:index }

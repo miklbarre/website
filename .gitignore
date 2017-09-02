@@ -17,6 +17,7 @@
 /web/bundles/
 /.idea/
 /bin/*
+/tests/*
 Supprimerait .gitignore
 Supprimerait README.md
 Supprimerait app/
@@ -28,3 +29,10 @@ Supprimerait src/
 Supprimerait tests/
 Supprimerait var/
 Supprimerait web/
+Supprimerait src/AppBundle/Controller/
+Supprimerait src/AppBundle/Resources/
+Supprimerait src/Website/MusicBundle/Resources/config/
+Supprimerait src/Website/MusicBundle/WebsiteMusicBundle.php
+Supprimerait src/Website/SerieBundle/
+Supprimerait tests/WebsiteMusicBundle/
+Supprimerait tests/WebsiteSerieBundle/

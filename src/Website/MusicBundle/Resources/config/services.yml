@@ -1,0 +1,4 @@
+services:
+#    website_music.example:
+#        class: Website\MusicBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
