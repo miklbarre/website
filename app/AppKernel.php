@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Website\HomeBundle\WebsiteHomeBundle(),
             new Website\MoviesBundle\WebsiteMoviesBundle(),
+            new Website\MusicBundle\WebsiteMusicBundle(),
+            new Website\SerieBundle\WebsiteSerieBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

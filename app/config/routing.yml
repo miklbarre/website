@@ -1,3 +1,11 @@
+website_serie:
+    resource: "@WebsiteSerieBundle/Resources/config/routing.yml"
+    prefix:   /
+
+website_music:
+    resource: "@WebsiteMusicBundle/Resources/config/routing.yml"
+    prefix:   /
+
 website_movies:
     resource: "@WebsiteMoviesBundle/Resources/config/routing.yml"
     prefix:   /

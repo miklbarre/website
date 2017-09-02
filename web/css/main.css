@@ -42,3 +42,7 @@ html, body {
     position: relative;
     padding-left: 30px;
 }
+
+.content-table thead th {
+    text-align: center;
+}

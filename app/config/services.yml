@@ -1,1 +1,3 @@
 services:
+    website.curl_service:
+        class: AppBundle\Services\CurlService

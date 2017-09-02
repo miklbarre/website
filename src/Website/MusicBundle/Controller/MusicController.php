@@ -2,24 +2,23 @@
 /**
  * Created by PhpStorm.
  * User: mickael
- * Date: 31/08/17
- * Time: 14:59
+ * Date: 01/09/17
+ * Time: 14:12
  */
 
-namespace Website\MoviesBundle\Controller;
+namespace Website\MusicBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\VarDumper\VarDumper;
 
-class MovieController extends Controller {
+class MusicController extends Controller {
 
     public function indexAction () {
-        $url = 'http://api.mick.dev/movies/getAll';
+        $url = 'http://api.mick.dev/musics/getall';
         $curlService = $this->get('website.curl_service');
         $response = $curlService->sendGetRequest($url);
-        $movies = json_decode($response,true);
-        return $this->render('@WebsiteMovies/index.html.twig', array('movies' => $movies));
+        $musics = json_decode($response,true);
+        return $this->render('@WebsiteMusic/index.html.twig', array('musics' => $musics));
     }
-
 }
