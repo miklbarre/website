@@ -10,12 +10,11 @@ namespace Website\MusicBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\VarDumper\VarDumper;
 
 class MusicController extends Controller {
 
     public function indexAction () {
-        $url = 'http://api.mick.dev/musics/getall';
+        $url = $this->getParameter('api_server').'musics/getallalbumbyartist';
         $curlService = $this->get('website.curl_service');
         $response = $curlService->sendGetRequest($url);
         $musics = json_decode($response,true);

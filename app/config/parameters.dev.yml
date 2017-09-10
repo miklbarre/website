@@ -13,3 +13,4 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: 218abd15fecefb487d77e877eaed67ed1412476f
+    api: http://api.mick.dev/

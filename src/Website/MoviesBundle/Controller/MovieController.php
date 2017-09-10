@@ -8,14 +8,12 @@
 
 namespace Website\MoviesBundle\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\VarDumper\VarDumper;
 
 class MovieController extends Controller {
 
     public function indexAction () {
-        $url = 'http://api.mick.dev/movies/getAll';
+        $url = $this->getParameter('api_server').'movies/getAll';
         $curlService = $this->get('website.curl_service');
         $response = $curlService->sendGetRequest($url);
         $movies = json_decode($response,true);

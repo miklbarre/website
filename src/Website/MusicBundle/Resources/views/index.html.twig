@@ -14,14 +14,12 @@
             <thead >
             <th>ARTISTE</th>
             <th>ALBUM</th>
-            <th>CHANSON</th>
             </thead>
             <tbody>
             {% for music in musics %}
                 <tr data-album="{{ music.idAlbum }}" data-artiste="{{ music.idArtiste }}">
                     <td>{{ music.Artiste }}</td>
                     <td>{{ music.Album }}</td>
-                    <td>{{ music.Chanson }}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -32,4 +30,9 @@
 {% block javascript %}
     {{ parent() }}
     <script src="{{ asset('js/musics/music.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            musics.init($('#table-musics'));
+        });
+    </script>
 {% endblock %}

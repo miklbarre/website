@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block title %}Séries{% endblock %}
+
+{% block body %}
+    <h2>Liste de tous les séries</h2>
+    <div class="content-table col-sm-10">
+        <table id="table-series" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead >
+            <th>Série</th>
+            </thead>
+            <tbody>
+            {% for serie in series %}
+                <tr data-id="{{ serie.id }} ">
+                    <td>{{ serie.name }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script src="{{ asset('js/series/series.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            series.init($('#table-series'));
+        });
+    </script>
+{% endblock %}
