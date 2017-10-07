@@ -1,3 +1,15 @@
 website_movies_homepage:
     path:     /movies
     defaults: { _controller: WebsiteMoviesBundle:Movie:index }
+
+website_movies_getall:
+    path:     /movies-getall
+    defaults: { _controller: WebsiteMoviesBundle:Movie:getAll }
+    options:
+        expose: true
+
+website_movies_search:
+    path:     /movies-search
+    defaults: { _controller: WebsiteMoviesBundle:Movie:search }
+    options:
+        expose: true

@@ -2,6 +2,56 @@
 
 {% block title %}Accueil{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+
 {% block body %}
-    CONTENT
+    <form>
+        <label>
+            <select name="specialties_1[]" multiple>
+                <option value="spec1">SPEC1</option>
+                <option value="spec2">SPEC2</option>
+                <option value="spec3">SPEC3</option>
+                <option value="spec4">SPEC4</option>
+            </select>
+        </label>
+        <div class="other-spe"></div>
+        <button class="add-specialties btn btn-primary">Add Spe</button>
+        <button class="btn-submit btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.add-specialties').on('click', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                $('.other-spe').append('<select name="specialties_2[]" multiple>\n' +
+                    '            <option value="spec1">SPEC1</option>\n' +
+                    '            <option value="spec2">SPEC2</option>\n' +
+                    '            <option value="spec3">SPEC3</option>\n' +
+                    '            <option value="spec4">SPEC4</option>\n' +
+                    '        </select>');
+            });
+
+            $('.btn-submit').on('click',function (e) {
+               e.stopPropagation();
+               e.preventDefault();
+               $.ajax({
+                   url: Routing.generate('website_home_spec'),
+                   method: 'POST',
+                   data: $('form').serializeArray(),
+                   success: function (datas) {
+                       console.log(datas);
+                   }
+               })
+            });
+        });
+    </script>
 {% endblock %}

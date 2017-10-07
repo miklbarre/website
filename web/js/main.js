@@ -1,5 +1,5 @@
 var Main = function () {
-    var initializeDataTable = function (element) {
+    var initializeDataTable = function (element,url, columns) {
         element.DataTable({
             language: {
                 sProcessing:     "Traitement en cours ...",
@@ -25,13 +25,21 @@ var Main = function () {
             },
             paging: false,
             scrollY:        "300px",
-            scrollCollapse: true
+            scrollCollapse: true,
+            processing: true,
+            serverSide: false,
+            searching: false,
+            ajax: {
+                url: url,
+                type: "GET"
+            },
+            columns: columns
         });
     };
 
     return {
-        init: function (element) {
-            initializeDataTable(element);
+        init: function (element, url,columns) {
+            initializeDataTable(element,url,columns);
         }
     };
 }();

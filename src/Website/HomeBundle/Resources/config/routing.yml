@@ -1,3 +1,9 @@
 website_home_homepage:
     path:     /
     defaults: { _controller: WebsiteHomeBundle:Home:index }
+
+website_home_spec:
+    path:     /spe
+    defaults: { _controller: WebsiteHomeBundle:Home:spe }
+    options:
+        expose: true
