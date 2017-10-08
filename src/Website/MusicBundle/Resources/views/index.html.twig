@@ -9,20 +9,22 @@
 
 {% block body %}
     <h2>Liste de toutes les musiques</h2>
-    <div class="content-table col-sm-10">
+    <div class="form-group row col-md-6">
+        <div class="col-md-8">
+            <input type="text" placeholder="Album/Artiste" class="search-artiste form-control">
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary filter">Filtrer</button>
+        </div>
+    </div>
+    <div class="content-table">
         <table id="table-musics" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead >
-            <th>ARTISTE</th>
-            <th>ALBUM</th>
+            <th>idArtiste</th>
+            <th>Artiste</th>
+            <th>Album</th>
+            <th>idArtiste</th>
             </thead>
-            <tbody>
-            {% for music in musics %}
-                <tr data-album="{{ music.idAlbum }}" data-artiste="{{ music.idArtiste }}">
-                    <td>{{ music.Artiste }}</td>
-                    <td>{{ music.Album }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
         </table>
     </div>
 {% endblock %}
