@@ -28,7 +28,7 @@ var Main = function () {
             scrollCollapse: true,
             processing: true,
             serverSide: false,
-            searching: false,
+            searching: true,
             ajax: {
                 url: url,
                 type: "GET"
