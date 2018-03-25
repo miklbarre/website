@@ -29,6 +29,7 @@ var Main = function () {
             processing: true,
             serverSide: false,
             searching: true,
+            ordering: false,
             ajax: {
                 url: url,
                 type: "GET"
