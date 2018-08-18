@@ -19,20 +19,6 @@ class MusicController extends Controller {
         return $this->render('@WebsiteMusic/index.html.twig');
     }
 
-    public function searchAction(Request $request) {
-        $search = $request->get('valueSearch');
-        $url = $this->getParameter('api_server') . 'musics/search';
-        $curlService = $this->get('website.curl_service');
-        $response = $curlService->sendGetRequest($url."?search=".$search);
-        if(json_decode($response, true)) {
-            $musics = json_decode($response, true);
-        }
-        else {
-            $musics = array('data' => [], 'recordsFiltered' => 0, 'recordsTotal' => 0, 'draw' => 1);
-        }
-        return new JsonResponse($musics);
-    }
-
     public function  getAllMusicsAction ()
     {
         $url = $this->getParameter('api_server') . 'musics/getallalbumbyartist';

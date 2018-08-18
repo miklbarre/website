@@ -32,7 +32,7 @@ var Main = function () {
             ordering: false,
             ajax: {
                 url: url,
-                type: "GET"
+                type: "POST"
             },
             columns: columns
         });
