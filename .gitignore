@@ -36,3 +36,4 @@ Supprimerait src/Website/MusicBundle/WebsiteMusicBundle.php
 Supprimerait src/Website/SerieBundle/
 Supprimerait tests/WebsiteMusicBundle/
 Supprimerait tests/WebsiteSerieBundle/
+/var/

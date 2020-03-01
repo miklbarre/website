@@ -8,19 +8,7 @@
 
 
 {% block body %}
-    <form>
-        <label>
-            <select name="specialties_1[]" multiple>
-                <option value="spec1">SPEC1</option>
-                <option value="spec2">SPEC2</option>
-                <option value="spec3">SPEC3</option>
-                <option value="spec4">SPEC4</option>
-            </select>
-        </label>
-        <div class="other-spe"></div>
-        <button class="add-specialties btn btn-primary">Add Spe</button>
-        <button class="btn-submit btn btn-primary">Submit</button>
-    </form>
+    <button class="btn btn-primary btn-submit">Submit</button>
 {% endblock %}
 
 {% block javascript %}
@@ -29,15 +17,23 @@
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
     <script>
         $(document).ready(function () {
-            $('.add-specialties').on('click', function (e) {
-                e.stopPropagation();
-                e.preventDefault();
-                $('.other-spe').append('<select name="specialties_2[]" multiple>\n' +
-                    '            <option value="spec1">SPEC1</option>\n' +
-                    '            <option value="spec2">SPEC2</option>\n' +
-                    '            <option value="spec3">SPEC3</option>\n' +
-                    '            <option value="spec4">SPEC4</option>\n' +
-                    '        </select>');
+            $('.js-ical').on('click', function (e) {
+                    let ical = "BEGIN:VCALENDAR\r\n"+
+                    "VERSION:2.0\r\n"+
+                    "CALSCALE:GREGORIAN\r\n"+
+                    "METHOD:PUBLISH\r\n"+
+                    "BEGIN:VEVENT\r\n"+
+                    "DTSTART:20200224T120000Z\r\n"+
+                    "DTEND:20200224T130000Z\r\n"+
+                    "DTSTAMP:20200224T124628Z\r\n"+
+                    "SEQUENCE:1\r\n"+
+                    "STATUS:TENTATIVE\r\n"+
+                    "SUMMARY:ééé èèèè\r\n"+
+                    "DESCRIPTION: àààààààààààààà éééééééééééééééééé ______ èèèèèèèèè \r\n"+
+                    "TRANSP:OPAQUE\r\n"+
+                    "END:VEVENT\r\n"+
+                    "END:VCALENDAR";
+                                        window.open( "data:text/calendar;charset=utf8," + escape(ical));
             });
 
             $('.btn-submit').on('click',function (e) {
@@ -48,7 +44,10 @@
                    method: 'POST',
                    data: $('form').serializeArray(),
                    success: function (datas) {
-                       console.log(datas);
+                       let element = document.createElement('a');
+                      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + datas);
+                      element.setAttribute('download', "test.ics");
+                      element.click();
                    }
                })
             });
